@@ -2,22 +2,33 @@
 <html>
 	<head>
     	<title>Hello World!</title>
-    </head>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+		<style type="text/css">
+			button{
+				position:relative;
+			}
+			#yt-video{
+				display:none;
+			}
+	</style>
+	
+	</head>
     <body>
-	<iframe width="560" height="315" src="https://www.youtube.com/embed/DrDm7uO4Fu0" frameborder="0" allowfullscreen align=right></iframe>
-	<h1>Hello World!</h1>
-	<h2>A few facts about the world we live <br> in</h2>
-	<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Earth_Eastern_Hemisphere.jpg/600px-Earth_Eastern_Hemisphere.jpg" width="300">
+	
+	<h1 class="h3s">Hello World!</h1>
+	<h2 class="h3s">A few facts about the world we live <br> in</h2>
+	<iframe id="yt-video" width="560" height="315" src="https://www.youtube.com/embed/DrDm7uO4Fu0" frameborder="0" allowfullscreen align=right></iframe>
+	<img id="img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Earth_Eastern_Hemisphere.jpg/600px-Earth_Eastern_Hemisphere.jpg" width="300">
 	<p>Earth is the third planet from the Sun and is the largest of the terrestrial planets. Unlike the other planets in the solar system that are named after classic <br>deities the Earth’s name comes from the Anglo-Saxon word erda which means ground or soil. The Earth was formed approximately 4.54 billion years <br>ago and is the only known planet to support life.</p>
     <hr>
-	<h3>About the earth</h3>
+	<h3 class="h3s">About the earth</h3>
 	<ul>
 	<li><strong>Mass:</strong> 5,972,190,000,000,000 billion kg</li>
 	<li><strong>Diameter at equator:</strong> 12,756 km</li>
 	<li><strong>Satellites:</strong> <a href="http://space-facts.com/the-moon/">The Moon</a></li>
 	</ul>
 	<hr>
-	<h3>Top 3 earth facts</h3>
+	<h3 class="h3s">Top 3 earth facts</h3>
 	<ol>
 	<li>The Earth’s rotation is gradually slowing.</li>
 	<li>A year isn't exactly 365 days, and the earth doesn't take 24 hours to rotate</li>
@@ -46,7 +57,22 @@
 		</tbody>
 	</table>
 	<hr>
-	<p>Want to know more?</p>
-	<a href="http://space-facts.com/earth/?" target="_blank"><button>Click Here!</button></a>
-    </body>
+	<p>Want to know more through a video?</p>
+	<button id="click">Click Here!</button>
+    
+	
+	<script type="text/javascript">
+	$("button").click(function(){
+		$("#yt-video").fadeIn("slow",function(){
+			$("#img").animate({height:"100%",width:"40%"},1000,function(){
+				$("#yt-video").animate({width:"50%",height:"755px"},1000 ,function(){
+					$("button").html("Process completed!")
+				});
+			});
+		
+		});
+		
+	});
+	</script>
+	</body>
 </html>
